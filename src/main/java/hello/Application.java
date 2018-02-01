@@ -18,25 +18,28 @@ public class Application {
     }
 
     @Bean
-    public CommandLineRunner demo(BuddyInfoRepository repository) {
+    public CommandLineRunner demo(AddressBookRepository bookRepository, BuddyInfoRepository buddyRepository) {
         return (args) -> {
-            // save a couple of customers
-            repository.save(new BuddyInfo("Jack", "(613) 123-3030"));
-            repository.save(new BuddyInfo("Chloe", "(613) 123-5500"));
-            repository.save(new BuddyInfo("Justin", "(613) 123-9001"));
-            repository.save(new BuddyInfo("Justin", "(613) 123-4455"));
-            repository.save(new BuddyInfo("Michelle", "(613) 123-3000"));
+            AddressBook book = new AddressBook();
+
+            book.addBuddy(new BuddyInfo("Jack", "(613) 123-3030"));
+            book.addBuddy(new BuddyInfo("Chloe", "(613) 123-5500"));
+            book.addBuddy(new BuddyInfo("Justin", "(613) 123-9001"));
+            book.addBuddy(new BuddyInfo("Justin", "(613) 123-4455"));
+            book.addBuddy(new BuddyInfo("Michelle", "(613) 123-3000"));
+
+            bookRepository.save(book);
 
             // fetch all customers
             log.info("hello.BuddyInfo's found with findAll():");
             log.info("-------------------------------");
-            for (BuddyInfo buddy : repository.findAll()) {
+            for (BuddyInfo buddy : buddyRepository.findAll()) {
                 log.info(buddy.toString());
             }
             log.info("");
 
             // fetch an individual customer by ID
-            BuddyInfo bud = repository.findOne(1L);
+            BuddyInfo bud = buddyRepository.findOne(1L);
             log.info("hello.BuddyInfo found with findOne(1L):");
             log.info("--------------------------------");
             log.info(bud.toString());
@@ -45,7 +48,7 @@ public class Application {
             // fetch customers by last name
             log.info("hello.BuddyInfo's found with findByName('Justin'):");
             log.info("--------------------------------------------");
-            for (BuddyInfo buddy : repository.findByName("Justin")) {
+            for (BuddyInfo buddy : buddyRepository.findByName("Justin")) {
                 log.info(buddy.toString());
             }
             log.info("");

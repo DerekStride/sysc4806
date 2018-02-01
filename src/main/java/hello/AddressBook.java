@@ -9,12 +9,12 @@ public class AddressBook {
 
     @Id
     @GeneratedValue
-    private int id;
+    private Long id;
     @OneToMany(mappedBy = "addressBook", cascade = CascadeType.ALL)
     private List<BuddyInfo> buddies;
 
     public AddressBook() {
-        this.buddies = new ArrayList<BuddyInfo>();
+        this.buddies = new ArrayList<>();
     }
 
     public AddressBook(List<BuddyInfo> buddies) {
@@ -22,7 +22,7 @@ public class AddressBook {
     }
 
     public List<BuddyInfo> getBuddies() {
-        return new ArrayList<BuddyInfo>(buddies);
+        return new ArrayList<>(buddies);
     }
 
     public void addBuddy(BuddyInfo bud) {

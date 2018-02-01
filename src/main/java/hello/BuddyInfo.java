@@ -48,6 +48,5 @@ public class BuddyInfo {
 
     public String toString() {
         return "ID: "+ id + "\tName: " + name + "\tPhone#: " + phoneNumber;
-
     }
 }
