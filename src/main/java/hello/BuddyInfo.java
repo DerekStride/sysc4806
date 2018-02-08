@@ -10,6 +10,7 @@ public class BuddyInfo {
 
     private static final String DEFAULT_NAME = "";
     private static final String DEFAULT_NUMBER = "";
+    private static final String DEFAULT_ADDRESS = "";
 
     @Id
     @GeneratedValue
@@ -17,17 +18,19 @@ public class BuddyInfo {
 
     private final String name;
     private final String phoneNumber;
+    private final String address;
 
     @ManyToOne
     private AddressBook addressBook;
 
     public BuddyInfo() {
-        this(DEFAULT_NAME, DEFAULT_NUMBER);
+        this(DEFAULT_NAME, DEFAULT_NUMBER, DEFAULT_ADDRESS);
     }
 
-    public BuddyInfo(String name, String phoneNumber) {
+    public BuddyInfo(String name, String phoneNumber, String address) {
         this.name = name;
         this.phoneNumber = phoneNumber;
+        this.address = address;
     }
 
     public String getName() {
@@ -47,6 +50,11 @@ public class BuddyInfo {
     }
 
     public String toString() {
-        return "ID: "+ id + "\tName: " + name + "\tPhone#: " + phoneNumber;
+        return "ID: "+ id + "\tName: " + name + "\tPhone#: " + phoneNumber +
+                "\tAddress: " + address;
+    }
+
+    public String getAddress() {
+        return address;
     }
 }

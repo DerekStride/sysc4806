@@ -9,7 +9,7 @@ public class BuddyInfoTest {
 
     @Before
     public void setUp() throws Exception {
-        bud = new BuddyInfo("Derek", "(613) 123-4567");
+        bud = new BuddyInfo("Derek", "(613) 123-4567", "123 Main St.");
     }
 
     @Test
@@ -23,7 +23,12 @@ public class BuddyInfoTest {
     }
 
     @Test
+    public void getAddress() throws Exception {
+        assertEquals("123 Main St.", bud.getAddress());
+    }
+
+    @Test
     public void toString1() throws Exception {
-        assertEquals("ID: null\tName: Derek\tPhone#: (613) 123-4567", bud.toString());
+        assertEquals("ID: null\tName: Derek\tPhone#: (613) 123-4567\tAddress: 123 Main St.", bud.toString());
     }
 }

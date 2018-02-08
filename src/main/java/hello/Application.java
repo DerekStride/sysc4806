@@ -22,11 +22,11 @@ public class Application {
         return (args) -> {
             AddressBook book = new AddressBook();
 
-            book.addBuddy(new BuddyInfo("Jack", "(613) 123-3030"));
-            book.addBuddy(new BuddyInfo("Chloe", "(613) 123-5500"));
-            book.addBuddy(new BuddyInfo("Justin", "(613) 123-9001"));
-            book.addBuddy(new BuddyInfo("Justin", "(613) 123-4455"));
-            book.addBuddy(new BuddyInfo("Michelle", "(613) 123-3000"));
+            book.addBuddy(new BuddyInfo("Jack", "(613) 123-3030", "123 Main St."));
+            book.addBuddy(new BuddyInfo("Chloe", "(613) 123-5500", "123 Main St."));
+            book.addBuddy(new BuddyInfo("Justin", "(613) 123-9001", "123 Main St."));
+            book.addBuddy(new BuddyInfo("Justin", "(613) 123-4455", "123 Main St."));
+            book.addBuddy(new BuddyInfo("Michelle", "(613) 123-3000", "123 Main St."));
 
             bookRepository.save(book);
 

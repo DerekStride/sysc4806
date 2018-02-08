@@ -63,9 +63,9 @@ public class AddressBook {
 
     public static void main(String args[]){
         AddressBook book = new AddressBook();
-        book.addBuddy(new BuddyInfo("Derek", "(613) 123-4567"));
-        book.addBuddy(new BuddyInfo("Max", "(613) 123-7654"));
-        book.addBuddy(new BuddyInfo("Tom", "(613) 123-7896"));
+        book.addBuddy(new BuddyInfo("Derek", "(613) 123-4567", "123 Main St."));
+        book.addBuddy(new BuddyInfo("Max", "(613) 123-7654","123 Main St."));
+        book.addBuddy(new BuddyInfo("Tom", "(613) 123-7896", "123 Main St."));
 
         System.out.println(book);
     }

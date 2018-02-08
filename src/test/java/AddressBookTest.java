@@ -13,7 +13,7 @@ public class AddressBookTest {
 
     @Before
     public void setUp() throws Exception {
-        bud = new BuddyInfo("Derek", "(613) 123-4567");
+        bud = new BuddyInfo("Derek", "(613) 123-4567", "123 Main St.");
         book = new AddressBook(new ArrayList<BuddyInfo>());
     }
 
@@ -27,6 +27,6 @@ public class AddressBookTest {
     @Test
     public void toString1() throws Exception {
         book.addBuddy(bud);
-        assertEquals("Id: null Buddies:\n\tID: null\tName: Derek\tPhone#: (613) 123-4567\n", book.toString());
+        assertEquals("Id: null Buddies:\n\tID: null\tName: Derek\tPhone#: (613) 123-4567\tAddress: 123 Main St.\n", book.toString());
     }
 }
