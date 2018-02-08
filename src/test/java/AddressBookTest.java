@@ -27,6 +27,6 @@ public class AddressBookTest {
     @Test
     public void toString1() throws Exception {
         book.addBuddy(bud);
-        assertEquals("Id: 0 Buddies:\n\tName: Derek\tPhone#: (613) 123-4567\n", book.toString());
+        assertEquals("Id: null Buddies:\n\tID: null\tName: Derek\tPhone#: (613) 123-4567\n", book.toString());
     }
 }

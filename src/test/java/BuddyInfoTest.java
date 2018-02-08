@@ -24,6 +24,6 @@ public class BuddyInfoTest {
 
     @Test
     public void toString1() throws Exception {
-        assertEquals("Name: Derek\tPhone#: (613) 123-4567", bud.toString());
+        assertEquals("ID: null\tName: Derek\tPhone#: (613) 123-4567", bud.toString());
     }
 }
