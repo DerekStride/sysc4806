@@ -8,6 +8,6 @@ import org.springframework.stereotype.Component;
 public class CustomizationBean implements EmbeddedServletContainerCustomizer {
     @Override
     public void customize(ConfigurableEmbeddedServletContainer container) {
-        container.setPort(8085);
+//        container.setPort(8085);
     }
 }
