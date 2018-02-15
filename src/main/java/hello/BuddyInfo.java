@@ -16,9 +16,9 @@ public class BuddyInfo {
     @GeneratedValue
     private Long id;
 
-    private final String name;
-    private final String phoneNumber;
-    private final String address;
+    private String name;
+    private String phoneNumber;
+    private String address;
 
     @ManyToOne
     private AddressBook addressBook;
@@ -31,14 +31,6 @@ public class BuddyInfo {
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.address = address;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
     }
 
     public AddressBook getAddressBook() { return addressBook; }
@@ -54,7 +46,31 @@ public class BuddyInfo {
                 "\tAddress: " + address;
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
     public String getAddress() {
         return address;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 }

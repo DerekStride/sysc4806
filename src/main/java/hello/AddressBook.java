@@ -44,6 +44,8 @@ public class AddressBook {
         return buddies.get(i);
     }
 
+    public Long getId() { return id; }
+
     public int size() {
         return buddies.size();
     }
